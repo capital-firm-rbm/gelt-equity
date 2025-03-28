@@ -2,8 +2,8 @@ export const palette = {
   darkBlue: '#03040e',
   pink: '#F272AE',
   lavender: '#A2A6F2',
-  skyBlue: '#f7ce46',
-//   skyBlue: '#63D8F2',
+//   skyBlue: '#f7ce46',
+  skyBlue: '#63D8F2',
   mint: '#9BF2BA',
   
   // RGBA versions

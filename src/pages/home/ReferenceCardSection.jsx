@@ -1,10 +1,13 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaPlus, FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 import palette from '../../styles/colors';
+import useResponsive from '../../hooks/useResponsive';
 
 const ReferenceCardSection = () => {
+  const { isMobile } = useResponsive();
+  
   // Card data
   const cards = [
     {
@@ -20,7 +23,6 @@ const ReferenceCardSection = () => {
   ];
 
   // Animation variants
-  // eslint-disable-next-line no-unused-vars
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,104 +51,109 @@ const ReferenceCardSection = () => {
     <section style={{ 
       background: palette.darkBlue,
       width: '100%',
-      padding: '100px 0',
-      position: 'relative'
+      padding: isMobile ? '50px 0' : '80px 0',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
       <div style={{ 
         width: '100%',
         maxWidth: '1200px',
         margin: '0 auto',
         padding: '0 20px',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'stretch',
-        gap: '30px',
-        flexWrap: 'wrap'
       }}>
-        {/* Cards */}
-        {cards.map((card, index) => (
-          <motion.div
-            key={index}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            exit="exit"
-            viewport={{ once: false }}
-            whileHover={{ y: -10, transition: { duration: 0.3 } }}
-            style={{ 
-              flex: '1',
-              minWidth: '300px',
-              maxWidth: '570px',
-              backgroundColor: '#2A2A2A',
-              borderRadius: '15px',
-              padding: '40px',
-              display: 'flex',
-              flexDirection: 'column',
-              position: 'relative'
-            }}
-          >
-            {/* Icon */}
-            <div style={{ 
-              display: 'flex',
-              marginBottom: '25px'
-            }}>
-              <div style={{ 
-                width: '50px',
-                height: '50px',
-                borderRadius: '50%',
-                backgroundColor: palette.skyBlue,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}>
-                <FaPlus color={palette.darkBlue} size={18} />
-              </div>
-            </div>
+        {/* Section title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{ 
+            fontSize: isMobile ? '28px' : '36px',
+            fontWeight: 'bold',
+            color: palette.skyBlue,
+            marginBottom: isMobile ? '30px' : '50px',
+            textAlign: 'center'
+          }}
+        >
+          Learn more about our programs
+        </motion.h2>
 
-            {/* Title */}
-            <h3 style={{ 
-              fontSize: '28px',
-              fontWeight: 'bold',
-              color: 'white',
-              marginBottom: '20px'
-            }}>
-              {card.title}
-            </h3>
-
-            {/* Description */}
-            <p style={{ 
-              fontSize: '16px',
-              lineHeight: '1.6',
-              color: '#CCCCCC',
-              marginBottom: '30px',
-              flex: '1'
-            }}>
-              {card.description}
-            </p>
-
-            {/* Learn More Link */}
-            <motion.a
-              href={card.learnMoreLink}
-              whileHover={{ x: 5 }}
+        {/* Cards container */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          style={{ 
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: 'center',
+            gap: isMobile ? '20px' : '30px',
+            width: '100%'
+          }}
+        >
+          {/* On mobile, stack the cards vertically. On tablet/desktop, show side by side */}
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
               style={{ 
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                borderRadius: '15px',
+                padding: isMobile ? '25px' : '40px',
                 display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                color: palette.skyBlue,
-                fontWeight: 'bold',
-                fontSize: '16px',
-                textDecoration: 'none',
-                alignSelf: 'flex-start'
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                flex: isMobile ? 'none' : '1',
+                maxWidth: isMobile ? '100%' : '550px',
+                height: isMobile ? 'auto' : '300px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
               }}
             >
-              Learn more
-              <div style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <FaArrowRight size={14} />
-              </div>
-            </motion.a>
-          </motion.div>
-        ))}
+              {/* Card Title - Moved up to replace the icon */}
+              <h3 style={{ 
+                fontSize: isMobile ? '22px' : '28px',
+                fontWeight: 'bold',
+                color: 'white',
+                marginBottom: '20px'
+              }}>
+                {card.title}
+              </h3>
+              
+              {/* Card Description */}
+              <p style={{ 
+                fontSize: isMobile ? '15px' : '16px',
+                color: '#CCCCCC',
+                lineHeight: '1.6',
+                marginBottom: '30px'
+              }}>
+                {card.description}
+              </p>
+              
+              {/* Learn More Link */}
+              <motion.div
+                whileHover={{ x: 5 }}
+                style={{ 
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  cursor: 'pointer',
+                  alignSelf: 'flex-start'
+                }}
+              >
+                <span style={{ 
+                  color: palette.skyBlue,
+                  fontWeight: 'bold',
+                  fontSize: isMobile ? '14px' : '16px'
+                }}>
+                  Learn more
+                </span>
+                <FaArrowRight size={14} color={palette.skyBlue} />
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

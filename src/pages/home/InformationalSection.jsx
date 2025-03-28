@@ -4,8 +4,10 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaTools, FaStore, FaHardHat, FaWrench, FaBox } from 'react-icons/fa';
 import phonesImage from '../../assets/Phones.png';
 import palette from '../../styles/colors';
+import useResponsive from '../../hooks/useResponsive'; // Import the responsive hook
 
 const InformationalSection = () => {
+  const { isMobile, isTablet } = useResponsive();
   const sectionRef = useRef(null);
   const businessTypesRef = useRef(null);
   
@@ -71,7 +73,7 @@ const InformationalSection = () => {
       style={{ 
         background: palette.darkBlue,
         width: '100%',
-        padding: '100px 0',
+        padding: isMobile ? '50px 0' : '100px 0',
         position: 'relative'
       }}
     >
@@ -79,66 +81,69 @@ const InformationalSection = () => {
       <div style={{ 
         width: '100%',
         maxWidth: '1200px',
-        margin: '0 auto 120px auto',
+        margin: '0 auto 60px auto',
         padding: '0 20px',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: isMobile || isTablet ? 'column' : 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: isMobile || isTablet ? '40px' : '0'
       }}>
-        {/* Business type grid on the left */}
-        <motion.div
-          ref={businessTypesRef}
-          style={{ 
-            width: '45%',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '15px',
-            justifyContent: 'center',
-            scale: businessGridScale,
-            rotate: businessGridRotate
-          }}
-        >
-          {businessTypes.map((business, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              style={{ 
-                width: index === 1 ? '220px' : '130px',
-                height: index === 1 ? '110px' : '130px',
-                backgroundColor: index === 1 ? palette.lavender : 'rgba(255, 255, 255, 0.1)',
-                borderRadius: '8px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '15px',
-                color: 'white',
-                position: 'relative',
-                zIndex: index === 1 ? 2 : 1,
-                y: businessTransformsY[index % 2], // Use pre-computed transform based on index
-                x: businessTransformsX[index % 3]  // Use pre-computed transform based on index
-              }}
-            >
-              <business.icon size={28} color="white" style={{ marginBottom: '10px' }} />
-              <span style={{ 
-                fontSize: '14px',
-                color: index === 1 ? 'white' : 'rgba(255, 255, 255, 0.7)'
-              }}>
-                {business.name}
-              </span>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Business type grid - displayed below text on mobile */}
+        {!isMobile && !isTablet && (
+          <motion.div
+            ref={businessTypesRef}
+            style={{ 
+              width: '45%',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '15px',
+              justifyContent: 'center',
+              scale: businessGridScale,
+              rotate: businessGridRotate
+            }}
+          >
+            {businessTypes.map((business, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                style={{ 
+                  width: index === 1 ? '220px' : '130px',
+                  height: index === 1 ? '110px' : '130px',
+                  backgroundColor: index === 1 ? palette.lavender : 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: '15px',
+                  color: 'white',
+                  position: 'relative',
+                  zIndex: index === 1 ? 2 : 1,
+                  y: businessTransformsY[index % 2], // Use pre-computed transform based on index
+                  x: businessTransformsX[index % 3]  // Use pre-computed transform based on index
+                }}
+              >
+                <business.icon size={28} color="white" style={{ marginBottom: '10px' }} />
+                <span style={{ 
+                  fontSize: '14px',
+                  color: index === 1 ? 'white' : 'rgba(255, 255, 255, 0.7)'
+                }}>
+                  {business.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
 
-        {/* Text content on the right */}
+        {/* Text content - always on top for mobile */}
         <motion.div
           style={{ 
-            width: '45%',
+            width: isMobile || isTablet ? '100%' : '45%',
             color: 'white',
             textAlign: 'left',
             y: useTransform(scrollYProgress, [0, 1], [0, 50])
@@ -147,7 +152,7 @@ const InformationalSection = () => {
           <motion.h2
             variants={fadeInUp}
             style={{ 
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : '48px',
               fontWeight: 'bold',
               color: palette.skyBlue,
               marginBottom: '25px'
@@ -159,7 +164,7 @@ const InformationalSection = () => {
           <motion.h3
             variants={fadeInUp}
             style={{ 
-              fontSize: '24px',
+              fontSize: isMobile ? '20px' : '24px',
               fontWeight: 'bold',
               marginBottom: '20px',
               color: 'white'
@@ -203,6 +208,104 @@ const InformationalSection = () => {
             </motion.button>
           </motion.div>
         </motion.div>
+
+        {/* Business type grid - displayed on mobile/tablet devices */}
+        {(isMobile || isTablet) && (
+          <motion.div
+            ref={businessTypesRef}
+            style={{ 
+              width: '100%',
+              display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
+              flexWrap: 'wrap',
+              gap: '10px',
+              justifyContent: 'center',
+              marginTop: '20px'
+            }}
+          >
+            {/* On mobile, show one business type at a time with horizontal scroll */}
+            {isMobile ? (
+              <div style={{
+                width: '100%',
+                overflowX: 'auto',
+                scrollbarWidth: 'none', // Hide scrollbar for Firefox
+                WebkitOverflowScrolling: 'touch',
+                msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
+              }}>
+                <div style={{
+                  display: 'flex',
+                  gap: '10px',
+                  paddingBottom: '10px', // Space for potential scrollbar
+                  width: 'max-content' // Allow container to grow with children
+                }}>
+                  {businessTypes.map((business, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      style={{ 
+                        width: '180px',
+                        height: '120px',
+                        backgroundColor: index === 1 ? palette.lavender : 'rgba(255, 255, 255, 0.1)',
+                        borderRadius: '8px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '15px',
+                        color: 'white',
+                        marginLeft: index === 0 ? '0' : '10px',
+                        flexShrink: 0 // Prevent items from shrinking
+                      }}
+                    >
+                      <business.icon size={28} color="white" style={{ marginBottom: '10px' }} />
+                      <span style={{ 
+                        fontSize: '14px',
+                        color: index === 1 ? 'white' : 'rgba(255, 255, 255, 0.7)'
+                      }}>
+                        {business.name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              // On tablet, show as a wrapped grid
+              businessTypes.map((business, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  style={{ 
+                    width: '170px',
+                    height: '100px',
+                    backgroundColor: index === 1 ? palette.lavender : 'rgba(255, 255, 255, 0.1)',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '15px',
+                    color: 'white',
+                    margin: '5px'
+                  }}
+                >
+                  <business.icon size={24} color="white" style={{ marginBottom: '8px' }} />
+                  <span style={{ 
+                    fontSize: '14px',
+                    color: index === 1 ? 'white' : 'rgba(255, 255, 255, 0.7)'
+                  }}>
+                    {business.name}
+                  </span>
+                </motion.div>
+              ))
+            )}
+          </motion.div>
+        )}
       </div>
 
       {/* Second subsection - Get it together */}
@@ -212,26 +315,28 @@ const InformationalSection = () => {
         margin: '0 auto',
         padding: '0 20px',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: isMobile || isTablet ? 'column' : 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: isMobile || isTablet ? '40px' : '0'
       }}>
-        {/* Text content on the left */}
+        {/* Text content - always first on mobile */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           style={{ 
-            width: '45%',
+            width: isMobile || isTablet ? '100%' : '45%',
             color: 'white',
-            textAlign: 'left'
+            textAlign: 'left',
+            order: isMobile || isTablet ? 1 : 0
           }}
         >
           <motion.h2
             variants={fadeInUp}
             style={{ 
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : '48px',
               fontWeight: 'bold',
               color: palette.skyBlue,
               marginBottom: '25px'
@@ -243,7 +348,7 @@ const InformationalSection = () => {
           <motion.h3
             variants={fadeInUp}
             style={{ 
-              fontSize: '24px',
+              fontSize: isMobile ? '20px' : '24px',
               fontWeight: 'bold',
               marginBottom: '20px',
               color: 'white'
@@ -300,18 +405,20 @@ const InformationalSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Phones image on the right */}
+        {/* Phones image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           style={{ 
-            width: '45%',
+            width: isMobile || isTablet ? '100%' : '45%',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative'
+            position: 'relative',
+            order: isMobile || isTablet ? 0 : 1,
+            marginBottom: isMobile || isTablet ? '20px' : '0'
           }}
         >
           <img 
@@ -320,7 +427,7 @@ const InformationalSection = () => {
             style={{ 
               maxWidth: '100%',
               height: 'auto',
-              transform: 'rotate(5deg)'
+              transform: isMobile ? 'rotate(0deg)' : 'rotate(5deg)'
             }}
           />
         </motion.div>

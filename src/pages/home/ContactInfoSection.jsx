@@ -1,11 +1,14 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaPencilAlt } from 'react-icons/fa';
+import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaPencilAlt, FaArrowRight } from 'react-icons/fa';
 import waveBackground from '../../assets/wave.png';
 import palette from '../../styles/colors';
+import useResponsive from '../../hooks/useResponsive'; // Import the responsive hook
 
 const ContactInfoSection = () => {
+  const { isMobile, isTablet } = useResponsive();
+  
   // Contact info data
   const contactCards = [
     {
@@ -97,7 +100,7 @@ const ContactInfoSection = () => {
     <section style={{ 
       background: palette.darkBlue,
       width: '100%',
-      padding: '120px 0 80px',
+      padding: isMobile ? '60px 0 40px' : '120px 0 80px',
       position: 'relative',
       overflow: 'hidden'
     }}>
@@ -107,10 +110,11 @@ const ContactInfoSection = () => {
         top: 0,
         right: 0,
         bottom: 0,
-        width: '60%',
+        width: isMobile ? '100%' : '60%',
         backgroundImage: `url(${waveBackground})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center left',
+        backgroundPosition: isMobile ? 'center' : 'center left',
+        opacity: 0.3, // Lower opacity on mobile for better text contrast
         zIndex: 1
       }} />
 
@@ -127,7 +131,7 @@ const ContactInfoSection = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          marginBottom: '100px'
+          marginBottom: isMobile ? '50px' : '100px'
         }}>
           <motion.h2
             variants={headingVariants}
@@ -136,11 +140,11 @@ const ContactInfoSection = () => {
             exit="exit"
             viewport={{ once: true }}
             style={{ 
-              fontSize: '48px',
+              fontSize: isMobile ? '32px' : (isTablet ? '36px' : '48px'),
               fontWeight: 'bold',
               color: palette.skyBlue,
               marginBottom: '15px',
-              maxWidth: '600px'
+              maxWidth: isMobile ? '100%' : '600px'
             }}
           >
             See what you qualified for
@@ -152,9 +156,9 @@ const ContactInfoSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
             style={{ 
-              fontSize: '24px',
+              fontSize: isMobile ? '18px' : '24px',
               color: 'white',
-              marginBottom: '40px'
+              marginBottom: isMobile ? '25px' : '40px'
             }}
           >
             No really, why wait? Let's do this!
@@ -172,76 +176,198 @@ const ContactInfoSection = () => {
               color: palette.darkBlue,
               border: 'none',
               borderRadius: '50px',
-              padding: '15px 30px',
+              padding: isMobile ? '12px 24px' : '15px 30px',
               fontWeight: 'bold',
-              fontSize: '16px',
+              fontSize: isMobile ? '14px' : '16px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '10px'
             }}
           >
-            <FaPencilAlt size={16} />
             APPLY NOW
           </motion.button>
         </div>
 
-        {/* Contact Cards */}
-        <motion.div
-          variants={cardsContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: false }}
-          style={{ 
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '20px',
-            justifyContent: 'flex-start',
-            width: '100%'
-          }}
-        >
-          {contactCards.map((card, index) => (
+        {/* Contact Cards - On mobile, use a horizontally scrollable container */}
+        {isMobile ? (
+          <div style={{
+            width: '100%',
+            overflowX: 'auto',
+            scrollbarWidth: 'none', // Hide scrollbar for Firefox
+            WebkitOverflowScrolling: 'touch',
+            msOverflowStyle: 'none', // Hide scrollbar for IE/Edge
+          }}>
             <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.2 }
-              }}
+              variants={cardsContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              exit="exit"
+              viewport={{ once: false }}
               style={{ 
-                flex: '1',
-                minWidth: '250px',
-                maxWidth: '380px',
-                backgroundColor: 'rgba(42, 42, 42, 0.95)',
-                borderRadius: '10px',
-                padding: '30px',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-start'
+                gap: '15px',
+                paddingBottom: '15px', // Space for potential scrollbar
+                width: 'max-content' // Allow container to grow with children
               }}
             >
-              <div style={{ marginBottom: '20px' }}>
-                <card.icon size={30} color={card.color} />
-              </div>
-              <h3 style={{ 
-                fontSize: '24px',
-                fontWeight: 'bold',
-                color: 'white',
-                marginBottom: '10px'
-              }}>
-                {card.title}
-              </h3>
-              <p style={{ 
-                fontSize: '16px',
-                color: '#CCCCCC',
-                lineHeight: '1.6'
-              }}>
-                {card.info}
-              </p>
+              {contactCards.map((card, index) => (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  whileHover={{
+                    y: -5,
+                    transition: { duration: 0.2 }
+                  }}
+                  style={{ 
+                    width: '280px',
+                    flexShrink: 0, // Prevent items from shrinking
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    borderRadius: '15px',
+                    padding: '25px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    height: '200px'
+                  }}
+                >
+                  {/* Restored original icon style */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <card.icon size={25} color={card.color} />
+                  </div>
+                  
+                  <div>
+                    <h3 style={{ 
+                      fontSize: '22px',
+                      fontWeight: 'bold',
+                      color: 'white',
+                      marginBottom: '8px'
+                    }}>
+                      {card.title}
+                    </h3>
+                    <p style={{ 
+                      fontSize: '15px',
+                      color: '#CCCCCC',
+                      lineHeight: '1.6',
+                      marginBottom: '20px'
+                    }}>
+                      {card.info}
+                    </p>
+                  </div>
+                  
+                  {/* Contact us link */}
+                  <motion.div
+                    whileHover={{ x: 5 }}
+                    style={{ 
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      cursor: 'pointer',
+                      alignSelf: 'flex-start'
+                    }}
+                  >
+                    <span style={{ 
+                      color: palette.skyBlue,
+                      fontWeight: 'bold',
+                      fontSize: '14px'
+                    }}>
+                      Contact us
+                    </span>
+                    <FaArrowRight size={14} color={palette.skyBlue} />
+                  </motion.div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        ) : (
+          // Desktop and tablet layout
+          <motion.div
+            variants={cardsContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            exit="exit"
+            viewport={{ once: false }}
+            style={{ 
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              justifyContent: isTablet ? 'center' : 'flex-start',
+              width: '100%'
+            }}
+          >
+            {contactCards.map((card, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.2 }
+                }}
+                style={{ 
+                  flex: '1',
+                  minWidth: isTablet ? '300px' : '250px',
+                  maxWidth: '380px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '15px',
+                  padding: '40px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '250px',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                }}
+              >
+                {/* Restored original icon style */}
+                <div style={{ marginBottom: '20px' }}>
+                  <card.icon size={30} color={card.color} />
+                </div>
+                
+                <div>
+                  <h3 style={{ 
+                    fontSize: '28px',
+                    fontWeight: 'bold',
+                    color: 'white',
+                    marginBottom: '10px'
+                  }}>
+                    {card.title}
+                  </h3>
+                  <p style={{ 
+                    fontSize: '16px',
+                    color: '#CCCCCC',
+                    lineHeight: '1.6',
+                    marginBottom: '30px'
+                  }}>
+                    {card.info}
+                  </p>
+                </div>
+                
+                {/* Contact us link */}
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    cursor: 'pointer',
+                    alignSelf: 'flex-start'
+                  }}
+                >
+                  <span style={{ 
+                    color: palette.skyBlue,
+                    fontWeight: 'bold',
+                    fontSize: '16px'
+                  }}>
+                    Contact us
+                  </span>
+                  <FaArrowRight size={14} color={palette.skyBlue} />
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );

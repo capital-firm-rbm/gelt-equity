@@ -1,98 +1,102 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { FaTwitter, FaLinkedinIn, FaFacebookF, FaInstagram, FaShieldAlt } from 'react-icons/fa';
-import companyLogo from '../assets/YL.png';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaShieldAlt } from 'react-icons/fa';
 import palette from '../styles/colors';
+import companyLogo from '../assets/YL.png';
+import useResponsive from '../hooks/useResponsive'; // Import the responsive hook
 
 const Footer = () => {
+  const { isMobile, isTablet } = useResponsive();
   const [email, setEmail] = useState('');
 
-  // Navigation links organized by category
-  const footerLinks = {
-    company: [
-      { title: 'Career', path: '/career' },
-      { title: 'FAQs', path: '/faqs' },
-      { title: 'About Us', path: '/about' },
-      { title: 'Partners', path: '/partners' },
-      { title: 'Syndication', path: '/syndication' },
-      { title: 'Customer Feedback', path: '/feedback' },
-    ],
-    connect: [
-      { title: 'Twitter', path: 'https://twitter.com', icon: FaTwitter },
-      { title: 'LinkedIn', path: 'https://linkedin.com', icon: FaLinkedinIn },
-      { title: 'facebook', path: 'https://facebook.com', icon: FaFacebookF },
-      { title: 'Instagram', path: 'https://instagram.com', icon: FaInstagram },
-    ],
-    resources: [
-      { title: 'Affiliates', path: '/affiliates' },
-      { title: 'Terms of Use', path: '/terms' },
-      { title: 'Privacy Policy', path: '/privacy' },
-    ]
-  };
-
-  // Animation variants
-  // eslint-disable-next-line no-unused-vars
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.6 } 
-    }
-  };
-
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle newsletter subscription here
-    console.log('Subscribing email:', email);
-    // Reset form or show success message
+    console.log('Newsletter signup:', email);
+    // Add newsletter signup logic here
     setEmail('');
-    alert('Thank you for subscribing!');
   };
+
+  // Footer links data
+  const footerLinksGroups = [
+    {
+      title: "Company",
+      links: [
+        { label: "About Us", url: "/about" },
+        { label: "Why YL Capital", url: "/why-us" },
+        { label: "Careers", url: "/careers" },
+        { label: "Press", url: "/press" },
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Blog", url: "/blog" },
+        { label: "Guides", url: "/guides" },
+        { label: "FAQ", url: "/faq" },
+        { label: "Contact Us", url: "/contact" },
+      ]
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Privacy Policy", url: "/privacy" },
+        { label: "Terms of Service", url: "/terms" },
+        { label: "Disclosures", url: "/disclosures" },
+        { label: "Sitemap", url: "/sitemap" },
+      ]
+    }
+  ];
+
+  // Social media links
+  const socialLinks = [
+    { icon: FaFacebookF, url: "https://facebook.com" },
+    { icon: FaTwitter, url: "https://twitter.com" },
+    { icon: FaInstagram, url: "https://instagram.com" },
+    { icon: FaLinkedinIn, url: "https://linkedin.com" },
+  ];
 
   return (
     <footer style={{ 
-      backgroundColor: '#2A2A2A',
+      backgroundColor: palette.darkBlue,
       color: 'white',
-      padding: '60px 0 20px',
+      padding: isMobile ? '40px 0' : '60px 0',
       width: '100%'
     }}>
-      {/* Newsletter section */}
+      {/* Newsletter subscription */}
       <div style={{ 
-        width: '100%',
+        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+        padding: isMobile ? '20px' : '40px',
+        marginBottom: isMobile ? '40px' : '60px',
+        borderRadius: '10px',
+        width: '90%',
         maxWidth: '1200px',
-        margin: '0 auto 60px auto',
-        padding: '0 20px',
-        textAlign: 'center'
+        margin: '0 auto 40px auto'
       }}>
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ 
-            fontSize: '36px',
-            fontWeight: 'bold',
-            color: palette.skyBlue,
-            marginBottom: '30px'
-          }}
-        >
+        <h2 style={{ 
+          fontSize: isMobile ? '24px' : '32px',
+          fontWeight: 'bold',
+          marginBottom: '15px',
+          textAlign: 'center'
+        }}>
           Subscribe to our newsletter
-        </motion.h2>
-
-        {/* Newsletter form */}
-        <form 
-          onSubmit={handleSubmit}
-          style={{
-            display: 'flex',
-            maxWidth: '800px',
-            margin: '0 auto',
-            gap: '10px',
-            flexWrap: 'wrap',
-            justifyContent: 'center'
-          }}
-        >
+        </h2>
+        <p style={{ 
+          fontSize: isMobile ? '14px' : '16px',
+          marginBottom: '25px',
+          textAlign: 'center',
+          color: '#CCCCCC'
+        }}>
+          Get the latest updates on business funding options and industry trends.
+        </p>
+        
+        <form onSubmit={handleSubmit} style={{ 
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '15px' : '0',
+          maxWidth: '700px',
+          margin: '0 auto'
+        }}>
           <input
             type="email"
             placeholder="Enter your e-mail address"
@@ -101,18 +105,18 @@ const Footer = () => {
             required
             style={{
               flex: '1',
-              minWidth: '300px',
+              minWidth: isMobile ? '100%' : '300px',
               padding: '15px 20px',
               fontSize: '16px',
               border: 'none',
-              borderRadius: '5px',
+              borderRadius: isMobile ? '5px' : '5px 0 0 5px',
               backgroundColor: 'white',
               color: '#333'
             }}
           />
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{
               padding: '15px 30px',
@@ -121,8 +125,9 @@ const Footer = () => {
               color: 'black',
               fontWeight: 'bold',
               border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer'
+              borderRadius: isMobile ? '5px' : '0 5px 5px 0',
+              cursor: 'pointer',
+              width: isMobile ? '100%' : 'auto'
             }}
           >
             Get Started
@@ -137,28 +142,43 @@ const Footer = () => {
         margin: '0 auto',
         padding: '0 20px',
         display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        gap: '40px'
+        gap: isMobile ? '40px' : '20px'
       }}>
         {/* Logo and company info */}
         <div style={{ 
-          flex: '1', 
-          minWidth: '250px', 
-          maxWidth: '300px' 
+          flex: isMobile ? 'none' : '1', 
+          minWidth: isMobile ? '100%' : '250px', 
+          maxWidth: isMobile ? '100%' : '300px' 
         }}>
-          <img 
-            src={companyLogo} 
-            alt="YL Capital Logo" 
-            style={{ 
-              height: '80px', 
-              marginBottom: '20px' 
-            }} 
-          />
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+            <img 
+              src={companyLogo} 
+              alt="YL Capital Logo" 
+              style={{ 
+                height: '60px', 
+                marginRight: '15px',
+                borderRadius: '8px'
+              }} 
+            />
+            <div style={{ 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              lineHeight: '1.2'
+            }}>
+              <span style={{ fontSize: '24px', fontWeight: 'bold' }}>YL</span>
+              <span style={{ fontSize: '16px' }}>CAPITAL</span>
+            </div>
+          </div>
+          
           <h3 style={{ 
-            fontSize: '18px', 
+            fontSize: '16px', 
             marginBottom: '10px',
-            fontWeight: 'normal'
+            fontWeight: 'normal',
+            color: '#CCCCCC'
           }}>
             Business funding is what we do!
           </h3>
@@ -188,124 +208,112 @@ const Footer = () => {
 
         {/* Footer links sections */}
         <div style={{ 
-          flex: '1', 
-          minWidth: '180px' 
+          display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
+          flex: isMobile ? 'none' : '2',
+          gap: isMobile ? '30px' : '40px',
+          flexWrap: isTablet && !isMobile ? 'wrap' : 'nowrap'
         }}>
-          <h3 style={{ 
-            fontSize: '18px', 
-            fontWeight: 'bold', 
-            marginBottom: '20px' 
-          }}>
-            Company
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {footerLinks.company.map((link, index) => (
-              <li key={index} style={{ marginBottom: '12px' }}>
-                <a 
-                  href={link.path}
-                  style={{ 
-                    color: '#CCCCCC', 
-                    textDecoration: 'none', 
-                    fontSize: '16px', 
-                    transition: 'color 0.3s' 
-                  }}
-                  onMouseOver={(e) => e.target.style.color = palette.skyBlue}
-                  onMouseOut={(e) => e.target.style.color = '#CCCCCC'}
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div style={{ 
-          flex: '1', 
-          minWidth: '180px' 
-        }}>
-          <h3 style={{ 
-            fontSize: '18px', 
-            fontWeight: 'bold', 
-            marginBottom: '20px' 
-          }}>
-            Connect
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {footerLinks.connect.map((link, index) => (
-              <li key={index} style={{ marginBottom: '12px' }}>
-                <a 
-                  href={link.path}
-                  style={{ 
-                    color: '#CCCCCC', 
-                    textDecoration: 'none', 
-                    fontSize: '16px', 
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    transition: 'color 0.3s' 
-                  }}
-                  onMouseOver={(e) => e.target.style.color = palette.skyBlue}
-                  onMouseOut={(e) => e.target.style.color = '#CCCCCC'}
-                >
-                  <link.icon size={16} />
-                  {link.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div style={{ 
-          flex: '1', 
-          minWidth: '180px' 
-        }}>
-          <h3 style={{ 
-            fontSize: '18px', 
-            fontWeight: 'bold', 
-            marginBottom: '20px' 
-          }}>
-            Resources
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            {footerLinks.resources.map((link, index) => (
-              <li key={index} style={{ marginBottom: '12px' }}>
-                <a 
-                  href={link.path}
-                  style={{ 
-                    color: '#CCCCCC', 
-                    textDecoration: 'none', 
-                    fontSize: '16px', 
-                    transition: 'color 0.3s' 
-                  }}
-                  onMouseOver={(e) => e.target.style.color = palette.skyBlue}
-                  onMouseOut={(e) => e.target.style.color = '#CCCCCC'}
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {footerLinksGroups.map((group, groupIndex) => (
+            <div 
+              key={groupIndex} 
+              style={{ 
+                flex: '1', 
+                minWidth: isMobile ? '100%' : (isTablet ? '45%' : '180px')
+              }}
+            >
+              <h3 style={{ 
+                fontSize: '18px', 
+                fontWeight: 'bold', 
+                marginBottom: '20px',
+                color: 'white'
+              }}>
+                {group.title}
+              </h3>
+              <ul style={{ 
+                listStyle: 'none', 
+                padding: 0, 
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px'
+              }}>
+                {group.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <motion.a 
+                      href={link.url}
+                      whileHover={{ color: palette.skyBlue, x: 5 }}
+                      style={{ 
+                        color: '#CCCCCC', 
+                        textDecoration: 'none',
+                        fontSize: '15px',
+                        display: 'block',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
+                      {link.label}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Copyright section */}
+      {/* Bottom section with social media and copyright */}
       <div style={{ 
-        borderTop: '1px solid #444',
-        marginTop: '60px',
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        textAlign: 'center', 
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        marginTop: '50px',
+        paddingTop: '30px',
         width: '100%',
         maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '20px'
+        margin: '50px auto 0 auto',
+        padding: '30px 20px 0 20px',
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between',
+        alignItems: isMobile ? 'center' : 'center',
+        gap: isMobile ? '20px' : '0'
       }}>
-        <p style={{ 
-          fontSize: '14px', 
-          color: '#999' 
+        {/* Social media links */}
+        <div style={{ 
+          display: 'flex',
+          gap: '15px',
+          order: isMobile ? 1 : 0
         }}>
-          © 2023 YL Capital. All Rights Reserved.
-        </p>
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1, backgroundColor: palette.skyBlue }}
+              style={{ 
+                width: '40px',
+                height: '40px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                transition: 'background-color 0.3s ease'
+              }}
+            >
+              <social.icon size={18} />
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Copyright text */}
+        <div style={{ 
+          color: '#999999',
+          fontSize: isMobile ? '12px' : '14px',
+          order: isMobile ? 0 : 1
+        }}>
+          &copy; {new Date().getFullYear()} YL Capital. All rights reserved.
+        </div>
       </div>
     </footer>
   );
