@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://rafibarides.github.io/capital-firm",
+  "homepage": "https://onyxequity.co",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
