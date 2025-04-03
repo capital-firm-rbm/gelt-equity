@@ -300,7 +300,7 @@ const TermCalculator = () => {
             <input
               type="range"
               min="100000"
-              max="5000000"
+              max="20000000"
               step="50000"
               value={loanAmount}
               onChange={handleSliderChange}
