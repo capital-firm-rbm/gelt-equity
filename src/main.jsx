@@ -6,7 +6,7 @@ import App from './App'
 import './assets/favicon.png'
 
 // Determine the base URL
-const basename = import.meta.env.DEV ? '/' : '/capital-firm/'
+const basename = '/'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
