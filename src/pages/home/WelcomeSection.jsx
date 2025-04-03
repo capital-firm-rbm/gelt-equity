@@ -5,6 +5,10 @@ import { FaCreditCard, FaChartLine } from 'react-icons/fa';
 import topImage from '../../assets/top-image-02.png';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive';
+import pro1 from '../../assets/pro1.png';
+import pro2 from '../../assets/pro2.png';
+import pro3 from '../../assets/pro3.png';
+import { Link } from 'react-router-dom';
 
 const WelcomeSection = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -169,23 +173,25 @@ const WelcomeSection = () => {
 
           {/* CTA Button */}
           <motion.div variants={itemVariants}>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ 
-                backgroundColor: palette.skyBlue,
-                color: palette.darkBlue,
-                border: 'none',
-                borderRadius: '50px',
-                padding: isMobile ? '12px 24px' : '15px 30px',
-                fontWeight: 'bold',
-                fontSize: isMobile ? '14px' : '16px',
-                cursor: 'pointer',
-                textTransform: 'uppercase'
-              }}
-            >
-              Apply Now
-            </motion.button>
+            <Link to="/apply" style={{ textDecoration: 'none' }}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ 
+                  backgroundColor: palette.skyBlue,
+                  color: palette.darkBlue,
+                  border: 'none',
+                  borderRadius: '50px',
+                  padding: isMobile ? '12px 24px' : '15px 30px',
+                  fontWeight: 'bold',
+                  fontSize: isMobile ? '14px' : '16px',
+                  cursor: 'pointer',
+                  textTransform: 'uppercase'
+                }}
+              >
+                Apply Now
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Separator line */}
@@ -215,29 +221,35 @@ const WelcomeSection = () => {
                   width: '50px', 
                   height: '50px', 
                   borderRadius: '50%', 
-                  background: '#777', 
                   position: 'absolute',
                   left: '0',
-                  zIndex: 3
-                }}></div>
+                  zIndex: 3,
+                  overflow: 'hidden'
+                }}>
+                  <img src={pro1} alt="Customer 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div style={{ 
                   width: '50px', 
                   height: '50px', 
                   borderRadius: '50%', 
-                  background: '#999', 
                   position: 'absolute',
                   left: '30px',
-                  zIndex: 2
-                }}></div>
+                  zIndex: 2,
+                  overflow: 'hidden'
+                }}>
+                  <img src={pro2} alt="Customer 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div style={{ 
                   width: '50px', 
                   height: '50px', 
                   borderRadius: '50%', 
-                  background: '#bbb', 
                   position: 'absolute',
                   left: '60px',
-                  zIndex: 1
-                }}></div>
+                  zIndex: 1,
+                  overflow: 'hidden'
+                }}>
+                  <img src={pro3} alt="Customer 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div style={{
                   width: '40px',
                   height: '40px',
@@ -259,7 +271,7 @@ const WelcomeSection = () => {
 
               {/* Join text */}
               <p style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                Join other enterpreneurs who used YL Capital funding for their business!
+                Join other enterpreneurs who used ONYX EQUITY funding for their business!
               </p>
             </motion.div>
           )}
@@ -279,7 +291,7 @@ const WelcomeSection = () => {
           >
             <motion.img 
               src={topImage} 
-              alt="YL Capital Mobile App"
+              alt="ONYX EQUITY Mobile App"
               style={{ 
                 maxWidth: '70%',
                 height: 'auto',
@@ -305,7 +317,7 @@ const WelcomeSection = () => {
           >
             <motion.img 
               src={topImage} 
-              alt="YL Capital Mobile App"
+              alt="ONYX EQUITY Mobile App"
               style={{ 
                 maxWidth: '100%',
                 height: 'auto',

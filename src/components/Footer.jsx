@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaShieldAlt } from 'react-icons/fa';
 import palette from '../styles/colors';
-import companyLogo from '../assets/YL.png';
+import companyLogo from '../assets/ONYX.png';
 import useResponsive from '../hooks/useResponsive'; // Import the responsive hook
 
 const Footer = () => {
@@ -22,27 +23,27 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { label: "About Us", url: "/about" },
-        { label: "Why YL Capital", url: "/why-us" },
-        { label: "Careers", url: "/careers" },
-        { label: "Press", url: "/press" },
+        { label: "About Us", url: "/about/our-story" },
+        { label: "Why Onyx Equity", url: "/about/our-story" },
+        { label: "Careers", url: "/about/careers" },
+        { label: "Press", url: "/company/press" },
       ]
     },
     {
       title: "Resources",
       links: [
-        { label: "Blog", url: "/blog" },
-        { label: "Guides", url: "/guides" },
-        { label: "FAQ", url: "/faq" },
+        { label: "Blog", url: "/resources/blog" },
+        { label: "Guides", url: "/resources/guides" },
+        { label: "FAQ", url: "/resources/faq" },
         { label: "Contact Us", url: "/contact" },
       ]
     },
     {
       title: "Legal",
       links: [
-        { label: "Privacy Policy", url: "/privacy" },
-        { label: "Terms of Service", url: "/terms" },
-        { label: "Disclosures", url: "/disclosures" },
+        { label: "Privacy Policy", url: "/legal/privacy-policy" },
+        { label: "Terms of Service", url: "/legal/terms-of-service" },
+        { label: "Disclosures", url: "/legal/disclosures" },
         { label: "Sitemap", url: "/sitemap" },
       ]
     }
@@ -156,7 +157,7 @@ const Footer = () => {
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
             <img 
               src={companyLogo} 
-              alt="YL Capital Logo" 
+              alt="Onyx Equity Logo" 
               style={{ 
                 height: '60px', 
                 marginRight: '15px',
@@ -169,8 +170,8 @@ const Footer = () => {
               alignItems: 'flex-start',
               lineHeight: '1.2'
             }}>
-              <span style={{ fontSize: '24px', fontWeight: 'bold' }}>YL</span>
-              <span style={{ fontSize: '16px' }}>CAPITAL</span>
+              <span style={{ fontSize: '24px', fontWeight: 'bold' }}>ONYX</span>
+              <span style={{ fontSize: '16px' }}>EQUITY</span>
             </div>
           </div>
           
@@ -240,9 +241,8 @@ const Footer = () => {
               }}>
                 {group.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <motion.a 
-                      href={link.url}
-                      whileHover={{ color: palette.skyBlue, x: 5 }}
+                    <Link
+                      to={link.url}
                       style={{ 
                         color: '#CCCCCC', 
                         textDecoration: 'none',
@@ -252,7 +252,7 @@ const Footer = () => {
                       }}
                     >
                       {link.label}
-                    </motion.a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -307,12 +307,12 @@ const Footer = () => {
         </div>
 
         {/* Copyright text */}
-        <div style={{ 
+              <div style={{ 
           color: '#999999',
           fontSize: isMobile ? '12px' : '14px',
           order: isMobile ? 0 : 1
         }}>
-          &copy; {new Date().getFullYear()} YL Capital. All rights reserved.
+          &copy; {new Date().getFullYear()} Onyx Equity. All rights reserved.
         </div>
       </div>
     </footer>

@@ -50,7 +50,7 @@ const TestimonialSection = () => {
       role: "Founder",
       rating: 5,
       image: "https://randomuser.me/api/portraits/men/41.jpg",
-      text: "The team at YL Capital has been exceptional to work with. Their understanding of the unique challenges small businesses face made the entire funding process seamless. I particularly appreciated their transparent approach - no hidden fees or confusing terms. I'll definitely be returning for future business needs."
+      text: "The team at ONYX EQUITY has been exceptional to work with. Their understanding of the unique challenges small businesses face made the entire funding process seamless. I particularly appreciated their transparent approach - no hidden fees or confusing terms. I'll definitely be returning for future business needs."
     }
   ];
 

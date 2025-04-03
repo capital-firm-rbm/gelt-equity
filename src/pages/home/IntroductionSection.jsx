@@ -152,7 +152,7 @@ const IntroductionSection = () => {
               marginBottom: '30px'
             }}
           >
-            Hi, We're YL Capital
+            Hi, We're Onyx Equity
           </motion.h2>
           
           <motion.p
@@ -274,7 +274,7 @@ const IntroductionSection = () => {
                 marginBottom: '30px'
               }}
             >
-              Hi, We're YL Capital
+              Hi, We're Onyx Equity
             </motion.h2>
             
             <motion.p

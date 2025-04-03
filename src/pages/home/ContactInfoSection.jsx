@@ -5,6 +5,7 @@ import { FaPhone, FaMapMarkerAlt, FaEnvelope, FaPencilAlt, FaArrowRight } from '
 import waveBackground from '../../assets/wave.png';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive'; // Import the responsive hook
+import { Link } from 'react-router-dom';
 
 const ContactInfoSection = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -13,19 +14,19 @@ const ContactInfoSection = () => {
   const contactCards = [
     {
       title: "Phone",
-      info: "404-920-4946",
+      info: "305-424-7992",
       icon: FaPhone,
       color: palette.skyBlue
     },
     {
       title: "Address",
-      info: "55 Water St, Miami, FL 33131",
+      info: "19790 W Dixie Hwy, Miami FL, 33180",
       icon: FaMapMarkerAlt,
       color: palette.skyBlue
     },
     {
       title: "Email",
-      info: "info@ylcapital.com",
+      info: "Admin@onyxequity.co",
       icon: FaEnvelope,
       color: palette.skyBlue
     }
@@ -164,29 +165,31 @@ const ContactInfoSection = () => {
             No really, why wait? Let's do this!
           </motion.p>
 
-          <motion.button
-            variants={buttonVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            whileHover="hover"
-            whileTap="tap"
-            style={{ 
-              backgroundColor: palette.skyBlue,
-              color: palette.darkBlue,
-              border: 'none',
-              borderRadius: '50px',
-              padding: isMobile ? '12px 24px' : '15px 30px',
-              fontWeight: 'bold',
-              fontSize: isMobile ? '14px' : '16px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px'
-            }}
-          >
-            APPLY NOW
-          </motion.button>
+          <Link to="/apply" style={{ textDecoration: 'none' }}>
+            <motion.button
+              variants={buttonVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              whileHover="hover"
+              whileTap="tap"
+              style={{ 
+                backgroundColor: palette.skyBlue,
+                color: palette.darkBlue,
+                border: 'none',
+                borderRadius: '50px',
+                padding: isMobile ? '12px 24px' : '15px 30px',
+                fontWeight: 'bold',
+                fontSize: isMobile ? '14px' : '16px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px'
+              }}
+            >
+              APPLY NOW
+            </motion.button>
+          </Link>
         </div>
 
         {/* Contact Cards - On mobile, use a horizontally scrollable container */}
@@ -258,25 +261,73 @@ const ContactInfoSection = () => {
                   </div>
                   
                   {/* Contact us link */}
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    style={{ 
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                      cursor: 'pointer',
-                      alignSelf: 'flex-start'
-                    }}
-                  >
-                    <span style={{ 
-                      color: palette.skyBlue,
-                      fontWeight: 'bold',
-                      fontSize: '14px'
-                    }}>
-                      Contact us
-                    </span>
-                    <FaArrowRight size={14} color={palette.skyBlue} />
-                  </motion.div>
+                  {card.title === "Phone" ? (
+                    <a href={`tel:${card.info.replace(/[^0-9]/g, '')}`} style={{ textDecoration: 'none' }}>
+                      <motion.div
+                        whileHover={{ x: 5 }}
+                        style={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                          cursor: 'pointer',
+                          alignSelf: 'flex-start'
+                        }}
+                      >
+                        <span style={{ 
+                          color: palette.skyBlue,
+                          fontWeight: 'bold',
+                          fontSize: '14px'
+                        }}>
+                          Call us
+                        </span>
+                        <FaArrowRight size={14} color={palette.skyBlue} />
+                      </motion.div>
+                    </a>
+                  ) : card.title === "Email" ? (
+                    <a href={`mailto:${card.info}`} style={{ textDecoration: 'none' }}>
+                      <motion.div
+                        whileHover={{ x: 5 }}
+                        style={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                          cursor: 'pointer',
+                          alignSelf: 'flex-start'
+                        }}
+                      >
+                        <span style={{ 
+                          color: palette.skyBlue,
+                          fontWeight: 'bold',
+                          fontSize: '14px'
+                        }}>
+                          Email us
+                        </span>
+                        <FaArrowRight size={14} color={palette.skyBlue} />
+                      </motion.div>
+                    </a>
+                  ) : (
+                    <a href={`https://maps.google.com/?q=${encodeURIComponent(card.info)}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                      <motion.div
+                        whileHover={{ x: 5 }}
+                        style={{ 
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                          cursor: 'pointer',
+                          alignSelf: 'flex-start'
+                        }}
+                      >
+                        <span style={{ 
+                          color: palette.skyBlue,
+                          fontWeight: 'bold',
+                          fontSize: '14px'
+                        }}>
+                          View on map
+                        </span>
+                        <FaArrowRight size={14} color={palette.skyBlue} />
+                      </motion.div>
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </motion.div>
@@ -345,25 +396,73 @@ const ContactInfoSection = () => {
                 </div>
                 
                 {/* Contact us link */}
-                <motion.div
-                  whileHover={{ x: 5 }}
-                  style={{ 
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    cursor: 'pointer',
-                    alignSelf: 'flex-start'
-                  }}
-                >
-                  <span style={{ 
-                    color: palette.skyBlue,
-                    fontWeight: 'bold',
-                    fontSize: '16px'
-                  }}>
-                    Contact us
-                  </span>
-                  <FaArrowRight size={14} color={palette.skyBlue} />
-                </motion.div>
+                {card.title === "Phone" ? (
+                  <a href={`tel:${card.info.replace(/[^0-9]/g, '')}`} style={{ textDecoration: 'none' }}>
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      style={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        alignSelf: 'flex-start'
+                      }}
+                    >
+                      <span style={{ 
+                        color: palette.skyBlue,
+                        fontWeight: 'bold',
+                        fontSize: '16px'
+                      }}>
+                        Call us
+                      </span>
+                      <FaArrowRight size={14} color={palette.skyBlue} />
+                    </motion.div>
+                  </a>
+                ) : card.title === "Email" ? (
+                  <a href={`mailto:${card.info}`} style={{ textDecoration: 'none' }}>
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      style={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        alignSelf: 'flex-start'
+                      }}
+                    >
+                      <span style={{ 
+                        color: palette.skyBlue,
+                        fontWeight: 'bold',
+                        fontSize: '16px'
+                      }}>
+                        Email us
+                      </span>
+                      <FaArrowRight size={14} color={palette.skyBlue} />
+                    </motion.div>
+                  </a>
+                ) : (
+                  <a href={`https://maps.google.com/?q=${encodeURIComponent(card.info)}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      style={{ 
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        alignSelf: 'flex-start'
+                      }}
+                    >
+                      <span style={{ 
+                        color: palette.skyBlue,
+                        fontWeight: 'bold',
+                        fontSize: '16px'
+                      }}>
+                        View on map
+                      </span>
+                      <FaArrowRight size={14} color={palette.skyBlue} />
+                    </motion.div>
+                  </a>
+                )}
               </motion.div>
             ))}
           </motion.div>

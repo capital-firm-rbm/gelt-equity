@@ -2,6 +2,7 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive';
 
@@ -11,14 +12,14 @@ const ReferenceCardSection = () => {
   // Card data
   const cards = [
     {
-      title: "More about YL Capital",
+      title: "More about Onyx Equity",
       description: "You should know everything about the company you work with and trust to give your capital.",
-      learnMoreLink: "/about"
+      learnMoreLink: "/about/our-story"
     },
     {
-      title: "Explore YL Capital Program",
+      title: "Explore Onyx Equity Program",
       description: "We offer you a suit of options along with our marketplace to help you get the best option for your business.",
-      learnMoreLink: "/programs"
+      learnMoreLink: "/about/our-story"
     }
   ];
 
@@ -132,25 +133,30 @@ const ReferenceCardSection = () => {
               </p>
               
               {/* Learn More Link */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                style={{ 
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  cursor: 'pointer',
-                  alignSelf: 'flex-start'
-                }}
+              <Link 
+                to={card.learnMoreLink} 
+                style={{ textDecoration: 'none' }}
               >
-                <span style={{ 
-                  color: palette.skyBlue,
-                  fontWeight: 'bold',
-                  fontSize: isMobile ? '14px' : '16px'
-                }}>
-                  Learn more
-                </span>
-                <FaArrowRight size={14} color={palette.skyBlue} />
-              </motion.div>
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    cursor: 'pointer',
+                    alignSelf: 'flex-start'
+                  }}
+                >
+                  <span style={{ 
+                    color: palette.skyBlue,
+                    fontWeight: 'bold',
+                    fontSize: isMobile ? '14px' : '16px'
+                  }}>
+                    Learn more
+                  </span>
+                  <FaArrowRight size={14} color={palette.skyBlue} />
+                </motion.div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

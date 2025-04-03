@@ -5,6 +5,7 @@ import { FaTools, FaStore, FaHardHat, FaWrench, FaBox } from 'react-icons/fa';
 import phonesImage from '../../assets/Phones.png';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive'; // Import the responsive hook
+import { Link } from 'react-router-dom';
 
 const InformationalSection = () => {
   const { isMobile, isTablet } = useResponsive();
@@ -170,7 +171,7 @@ const InformationalSection = () => {
               color: 'white'
             }}
           >
-            YL Capital believes in ALL small businesses.
+            ONYX EQUITY believes in ALL small businesses.
           </motion.h3>
           
           <motion.p
@@ -189,23 +190,25 @@ const InformationalSection = () => {
             variants={fadeInUp}
             style={{ marginTop: '30px' }}
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ 
-                backgroundColor: palette.skyBlue,
-                color: palette.darkBlue,
-                border: 'none',
-                borderRadius: '50px',
-                padding: '15px 30px',
-                fontWeight: 'bold',
-                fontSize: '16px',
-                cursor: 'pointer',
-                textTransform: 'uppercase'
-              }}
-            >
-              APPLY NOW
-            </motion.button>
+            <Link to="/apply" style={{ textDecoration: 'none' }}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ 
+                  backgroundColor: palette.skyBlue,
+                  color: palette.darkBlue,
+                  border: 'none',
+                  borderRadius: '50px',
+                  padding: '15px 30px',
+                  fontWeight: 'bold',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  textTransform: 'uppercase'
+                }}
+              >
+                APPLY NOW
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -378,30 +381,32 @@ const InformationalSection = () => {
               color: '#ffffff'
             }}
           >
-            It has never been easier to get funded for your small business, and you won't ever need to look anywhere else again. Right here at YL Capital, we have you and your business needs in mind and will do whatever it takes to help you elevate your business to the next level. Small business loans have never been so easy.
+            It has never been easier to get funded for your small business, and you won't ever need to look anywhere else again. Right here at Onyx Equity, we have you and your business needs in mind and will do whatever it takes to help you elevate your business to the next level. Small business loans have never been so easy.
           </motion.p>
           
           <motion.div
             variants={fadeInUp}
             style={{ marginTop: '30px' }}
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ 
-                backgroundColor: palette.skyBlue,
-                color: palette.darkBlue,
-                border: 'none',
-                borderRadius: '50px',
-                padding: '15px 30px',
-                fontWeight: 'bold',
-                fontSize: '16px',
-                cursor: 'pointer',
-                textTransform: 'uppercase'
-              }}
-            >
-              APPLY NOW
-            </motion.button>
+            <Link to="/apply" style={{ textDecoration: 'none' }}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={{ 
+                  backgroundColor: palette.skyBlue,
+                  color: palette.darkBlue,
+                  border: 'none',
+                  borderRadius: '50px',
+                  padding: '15px 30px',
+                  fontWeight: 'bold',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                  textTransform: 'uppercase'
+                }}
+              >
+                APPLY NOW
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -423,7 +428,7 @@ const InformationalSection = () => {
         >
           <img 
             src={phonesImage} 
-            alt="YL Capital Mobile App Screens" 
+            alt="Onyx Equity Mobile App Screens" 
             style={{ 
               maxWidth: '100%',
               height: 'auto',
