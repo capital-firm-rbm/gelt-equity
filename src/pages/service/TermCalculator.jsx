@@ -288,7 +288,7 @@ const TermCalculator = () => {
               position: 'absolute',
               top: sliderThumbSize/2,
               left: 0,
-              width: `${(loanAmount - 100000) / (5000000 - 100000) * 100}%`,
+              width: `${(loanAmount - 100000) / (20000000 - 100000) * 100}%`,
               height: '8px',
               backgroundColor: palette.skyBlue,
               borderRadius: '4px',
@@ -313,8 +313,8 @@ const TermCalculator = () => {
                 position: 'relative',
                 height: `${sliderThumbSize}px`,
                 cursor: 'pointer',
-                // Custom styling for webkit browsers
                 WebkitAppearance: 'none',
+                outline: 'none'
               }}
             />
             
@@ -359,7 +359,7 @@ const TermCalculator = () => {
             color: '#aaaaaa'
           }}>
             <span>$100K</span>
-            <span>$5M</span>
+            <span>$20M</span>
           </div>
         </motion.div>
         
