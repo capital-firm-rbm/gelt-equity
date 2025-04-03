@@ -296,7 +296,7 @@ const TermCalculator = () => {
               zIndex: 1,
               transition: 'width 0.2s'
             }} />
-            
+            {/* Slider */}
             <input
               type="range"
               min="100000"
