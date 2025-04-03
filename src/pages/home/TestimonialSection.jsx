@@ -5,6 +5,13 @@ import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar } from 'react-icons/
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive';
 
+// Import images directly
+import test1 from '../../assets/test1.png';
+import test2 from '../../assets/test2.png';
+import test3 from '../../assets/test3.png';
+import test4 from '../../assets/test4.png';
+import test5 from '../../assets/test5.png';
+
 const TestimonialSection = () => {
   const { isMobile, isTablet } = useResponsive();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +24,7 @@ const TestimonialSection = () => {
       company: "Bright Ideas Inc.",
       role: "CEO",
       rating: 5,
-      image: "/src/assets/test1.png",
+      image: test1,
       text: "I've had nothing but positive experiences with this company. Their dedication to simplifying small business funding is truly remarkable, and it shows in every aspect of their service. The application process was quick and easy, and I was impressed with how tailored their options were to my specific needs."
     },
     {
@@ -25,7 +32,7 @@ const TestimonialSection = () => {
       company: "Tech Innovate",
       role: "Founder",
       rating: 5,
-      image: "/src/assets/test2.png",
+      image: test2,
       text: "I was initially hesitant to apply for a loan, but after hearing about this company's reputation for exceptional customer service, I decided to give it a try. I am so glad I did! The team went above and beyond to ensure that I had all of the information I needed to make informed decisions about my funding options. They were patient, understanding, and truly cared about the success of my business."
     },
     {
@@ -33,7 +40,7 @@ const TestimonialSection = () => {
       company: "Green Earth Landscaping",
       role: "Owner",
       rating: 5,
-      image: "/src/assets/test3.png",
+      image: test3,
       text: "As a small business owner, I've had my fair share of challenges when it comes to financing. However, since partnering with this company, I've been blown away by the level of personalized service and support they've provided me. From the start, their team took the time to understand my unique needs and crafted a loan package that fit my business like a glove. And the best part? I received a decision the same day I applied!"
     },
     {
@@ -41,7 +48,7 @@ const TestimonialSection = () => {
       company: "Retail Solutions",
       role: "Director",
       rating: 5,
-      image: "/src/assets/test4.png",
+      image: test4,
       text: "As a small business owner, I've had my fair share of frustrations when it comes to funding. But ever since I found this finance company, everything has been able to run so smoothly and easily, usually all in the same day. I can't express how thrilled I am with their service and the peace of mind knowing I have a trusted financial partner supporting my business goals."
     },
     {
@@ -49,7 +56,7 @@ const TestimonialSection = () => {
       company: "Bell Enterprises",
       role: "Founder",
       rating: 5,
-      image: "/src/assets/test5.png",
+      image: test5,
       text: "The team at ONYX EQUITY has been exceptional to work with. Their understanding of the unique challenges small businesses face made the entire funding process seamless. I particularly appreciated their transparent approach - no hidden fees or confusing terms. I'll definitely be returning for future business needs."
     }
   ];

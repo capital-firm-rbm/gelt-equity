@@ -4,30 +4,37 @@ import { motion } from 'framer-motion';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive'; // Import the responsive hook
 
+// Import logo images
+import foxNews from '../../assets/Fox-News-Channel-Emblem-1024x576.png';
+import abcNews from '../../assets/ABC-News-Logo-2007.png';
+import forbes from '../../assets/Forbes_logo.svg.png';
+import moneyNews from '../../assets/TITLE_TREATMENT.png';
+import cnnMoney from '../../assets/CNNMoney_Logo.png';
+
 const AsSeenOnSection = () => {
   const { isMobile, isTablet } = useResponsive();
   
-  // Media logos data with local asset paths
+  // Media logos data with imported assets
   const mediaLogos = [
     {
       name: "Fox News",
-      url: "/src/assets/Fox-News-Channel-Emblem-1024x576.png"
+      url: foxNews
     },
     {
       name: "ABC News",
-      url: "/src/assets/ABC-News-Logo-2007.png"
+      url: abcNews
     },
     {
       name: "Forbes",
-      url: "/src/assets/Forbes_logo.svg.png"
+      url: forbes
     },
     {
       name: "Money News",
-      url: "/src/assets/TITLE_TREATMENT.png"
+      url: moneyNews
     },
     {
       name: "CNN Money",
-      url: "/src/assets/CNNMoney_Logo.png"
+      url: cnnMoney
     }
   ];
 
