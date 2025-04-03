@@ -7,27 +7,27 @@ import useResponsive from '../../hooks/useResponsive'; // Import the responsive 
 const AsSeenOnSection = () => {
   const { isMobile, isTablet } = useResponsive();
   
-  // Media logos data with external URLs
+  // Media logos data with local asset paths
   const mediaLogos = [
     {
       name: "Fox News",
-      url: "https://www.hatchwise.com/wp-content/uploads/2023/08/Fox-News-Channel-Emblem-1024x576.png"
+      url: "/src/assets/Fox-News-Channel-Emblem-1024x576.png"
     },
     {
       name: "ABC News",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ABC_News_logo_2021.svg/1280px-ABC_News_logo_2021.svg.png"
+      url: "/src/assets/ABC-News-Logo-2007.png"
     },
     {
       name: "Forbes",
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Forbes_logo.svg/2560px-Forbes_logo.svg.png"
+      url: "/src/assets/Forbes_logo.svg.png"
     },
     {
       name: "Money News",
-      url: "https://www.nineforbrands.com.au/wp-content/uploads/2023/06/MoneyNews_Black.png"
+      url: "/src/assets/TITLE_TREATMENT.png"
     },
     {
       name: "CNN Money",
-      url: "https://upload.wikimedia.org/wikipedia/commons/f/f7/CNN_Money_logo_%28old%29.png"
+      url: "/src/assets/CNNMoney_Logo.png"
     }
   ];
 
