@@ -10,7 +10,7 @@ const basename = import.meta.env.DEV ? '/' : '/capital-firm/'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
