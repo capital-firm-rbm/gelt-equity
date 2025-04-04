@@ -156,15 +156,6 @@ const Blog = () => {
                   flexDirection: 'column'
                 }}
               >
-                <div style={{
-                  height: '200px',
-                  backgroundColor: 'rgba(99, 216, 242, 0.1)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <div style={{ color: palette.skyBlue, fontSize: '40px', opacity: 0.7 }}>📊</div>
-                </div>
                 <div style={{ padding: '25px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
                     <span style={{ color: palette.skyBlue, fontSize: '14px' }}>{post.category}</span>
