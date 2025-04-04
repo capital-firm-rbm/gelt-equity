@@ -312,7 +312,7 @@ const Footer = () => {
           fontSize: isMobile ? '12px' : '14px',
           order: isMobile ? 0 : 1
         }}>
-          &copy; {new Date().getFullYear()} Onyx Equity. All rights reserved.
+          &copy; {new Date().getFullYear()} Onyx Equity. Developed by RBM
         </div>
       </div>
     </footer>
