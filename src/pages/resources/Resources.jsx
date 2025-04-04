@@ -29,23 +29,23 @@ const Resources = () => {
 
   const fundingPrograms = [
     {
-      tier: 'Starter',
-      amount: '$30K',
+      tier: 'Small Business',
+      amount: '$500K',
       color: '#3051a2'
     },
     {
-      tier: 'Standard',
-      amount: '$120K',
+      tier: 'Growth',
+      amount: '$2M+',
       color: '#4a90cc'
     },
     {
-      tier: 'Premier',
-      amount: '$250K',
+      tier: 'Enterprise',
+      amount: '$5M+',
       color: '#6c77e6'
     },
     {
-      tier: 'Premier Plus',
-      amount: '$500K',
+      tier: 'Premium',
+      amount: '$15M+',
       color: '#8de4a7'
     }
   ];
