@@ -5,7 +5,6 @@ import palette from '../styles/colors';
 import useResponsive from '../hooks/useResponsive';
 import { FaUser, FaBuilding, FaPhone, FaEnvelope, FaDollarSign, FaInfoCircle, FaCheckCircle, FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import AsSeenOnSection from './home/AsSeenOnSection';
 
 const Apply = () => {
   const { isMobile } = useResponsive();
@@ -731,9 +730,6 @@ const Apply = () => {
           )}
         </motion.div>
       </div>
-      
-      {/* Add AsSeenOnSection at the bottom */}
-      <AsSeenOnSection />
     </div>
   );
 };

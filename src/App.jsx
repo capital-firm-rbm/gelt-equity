@@ -9,7 +9,6 @@ import WelcomeSection from './pages/home/WelcomeSection'
 import IntroductionSection from './pages/home/IntroductionSection'
 import InformationalSection from './pages/home/InformationalSection'
 import TestimonialSection from './pages/home/TestimonialSection'
-import AsSeenOnSection from './pages/home/AsSeenOnSection'
 import ReferenceCardSection from './pages/home/ReferenceCardSection'
 import ContactInfoSection from './pages/home/ContactInfoSection'
 import OurStory from './pages/about/OurStory'
@@ -38,7 +37,6 @@ function HomePage() {
       <IntroductionSection />
       <InformationalSection />
       <TestimonialSection />
-      <AsSeenOnSection />
       <ReferenceCardSection />
       <ContactInfoSection />
     </>

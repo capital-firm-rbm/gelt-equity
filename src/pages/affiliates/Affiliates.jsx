@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaBuilding, FaPaperPlane } from 'react-icons/fa';
 import palette from '../../styles/colors';
 import useResponsive from '../../hooks/useResponsive';
-import AsSeenOnSection from '../home/AsSeenOnSection';
 
 const Affiliates = () => {
   const { isMobile } = useResponsive();
@@ -431,9 +430,6 @@ const Affiliates = () => {
           </form>
         </motion.div>
       </div>
-      
-      {/* Add AsSeenOnSection at the bottom */}
-      <AsSeenOnSection />
     </div>
   );
 };
