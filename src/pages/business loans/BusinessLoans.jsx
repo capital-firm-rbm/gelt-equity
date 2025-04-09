@@ -274,7 +274,7 @@ const BusinessLoans = () => {
             color: 'white',
             marginBottom: '40px'
           }}>
-            At Onyx Equity
+            At Gelt Capital USA
           </h3>
         </motion.div>
       </section>

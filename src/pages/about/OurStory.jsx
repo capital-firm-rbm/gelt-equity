@@ -53,7 +53,7 @@ const OurStory = () => {
       title: "Our Beginning",
       image: story1,
       year: "2010",
-      content: "Onyx Equity launched in Miami with a focus on high-value capital injections and strategic loan offerings to select Fortune 500 and S&P 500 clients."
+      content: "Gelt Capital USA launched in Miami with a focus on high-value capital injections and strategic loan offerings to select Fortune 500 and S&P 500 clients."
     },
     {
       id: 2,
@@ -67,7 +67,7 @@ const OurStory = () => {
       title: "Leading the Industry",
       image: story3,
       year: "Today",
-      content: "Today, Onyx Equity's reputation for nimble financing, robust liquidity management, and efficient capital deployment sets us apart in a rapidly evolving fintech landscape, positioning us as a leading resource for global corporations seeking tailored funding solutions."
+      content: "Today, Gelt Capital USA's reputation for nimble financing, robust liquidity management, and efficient capital deployment sets us apart in a rapidly evolving fintech landscape, positioning us as a leading resource for global corporations seeking tailored funding solutions."
     }
   ];
 
@@ -153,7 +153,7 @@ const OurStory = () => {
               lineHeight: 1.6
             }}
           >
-            Onyx Equity launched in Miami with a focus on high-value capital injections and strategic loan offerings to select Fortune 500 and S&P 500 clients. Over time, they capitalized on fintech innovations, like blockchain-backed risk mitigation and AI-driven due diligence tools to streamline underwriting and expand their portfolio. Today, Onyx Equity's reputation for nimble financing, robust liquidity management, and efficient capital deployment sets them apart in a rapidly evolving fintech landscape, positioning them as a leading resource for global corporations seeking tailored funding solutions.
+            Gelt Capital USA launched in Miami with a focus on high-value capital injections and strategic loan offerings to select Fortune 500 and S&P 500 clients. Over time, they capitalized on fintech innovations, like blockchain-backed risk mitigation and AI-driven due diligence tools to streamline underwriting and expand their portfolio. Today, Gelt Capital USA's reputation for nimble financing, robust liquidity management, and efficient capital deployment sets them apart in a rapidly evolving fintech landscape, positioning them as a leading resource for global corporations seeking tailored funding solutions.
           </motion.p>
         </div>
       </motion.section>
@@ -192,7 +192,7 @@ const OurStory = () => {
               >
                 <img 
                   src={item.image} 
-                  alt={`Onyx Equity - ${item.title}`} 
+                  alt={`Gelt Capital USA - ${item.title}`} 
                   style={{
                     width: '100%',
                     height: '400px',
@@ -372,7 +372,7 @@ const OurStory = () => {
           margin: '0 auto 30px',
           color: '#CCCCCC'
         }}>
-          Partner with Onyx Equity and experience financial solutions tailored to your unique business needs.
+          Partner with Gelt Capital USA and experience financial solutions tailored to your unique business needs.
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}

@@ -190,7 +190,7 @@ const Service = () => {
               color: 'white'
             }}
           >
-            Onyx Equity
+            Gelt Capital USA
           </motion.h1>
           
           <motion.h2
@@ -236,7 +236,7 @@ const Service = () => {
               marginBottom: '30px'
             }}
           >
-            If Onyx Equity's direct programs aren't the best fit for you, our Marketplace gotcha covered! Onyx Equity has created its own unique Marketplace, with over a decade of vetted partnerships.
+            If Gelt Capital USA's direct programs aren't the best fit for you, our Marketplace gotcha covered! Gelt Capital USA has created its own unique Marketplace, with over a decade of vetted partnerships.
           </motion.p>
           
           <Link to="/apply" style={{ textDecoration: 'none' }}>
@@ -284,7 +284,7 @@ const Service = () => {
         >
           <motion.img 
             src={marketplaceImage} 
-            alt="Onyx Equity Marketplace" 
+            alt="Gelt Capital USA Marketplace" 
             initial={{ opacity: 0.8 }}
             animate={{ 
               opacity: 1,

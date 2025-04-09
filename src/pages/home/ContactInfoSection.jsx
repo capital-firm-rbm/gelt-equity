@@ -14,19 +14,19 @@ const ContactInfoSection = () => {
   const contactCards = [
     {
       title: "Phone",
-      info: "305-424-7992",
+      info: "247-378-5821",
       icon: FaPhone,
       color: palette.skyBlue
     },
     {
       title: "Address",
-      info: "19790 W Dixie Hwy, Miami FL, 33180",
+      info: "7901 4th st N ste 300, St. Petersburg FL",
       icon: FaMapMarkerAlt,
       color: palette.skyBlue
     },
     {
       title: "Email",
-      info: "Admin@onyxequity.co",
+      info: "Admin@Gelt Capital USAequity.co",
       icon: FaEnvelope,
       color: palette.skyBlue
     }

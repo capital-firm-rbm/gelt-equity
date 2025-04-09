@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaShieldAlt } from 'react-icons/fa';
 import palette from '../styles/colors';
-import companyLogo from '../assets/ONYX.png';
+import companyLogo from '../assets/Gelt Capital USA.png';
 import useResponsive from '../hooks/useResponsive'; // Import the responsive hook
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
       title: "Company",
       links: [
         { label: "About Us", url: "/about/our-story" },
-        { label: "Why Onyx Equity", url: "/about/our-story" },
+        { label: "Why Gelt Capital USA", url: "/about/our-story" },
         { label: "Careers", url: "/about/careers" },
         { label: "Press", url: "/company/press" },
       ]
@@ -157,7 +157,7 @@ const Footer = () => {
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
             <img 
               src={companyLogo} 
-              alt="Onyx Equity Logo" 
+              alt="Gelt Capital USA Logo" 
               style={{ 
                 height: '60px', 
                 marginRight: '15px',
@@ -170,8 +170,8 @@ const Footer = () => {
               alignItems: 'flex-start',
               lineHeight: '1.2'
             }}>
-              <span style={{ fontSize: '24px', fontWeight: 'bold' }}>ONYX</span>
-              <span style={{ fontSize: '16px' }}>EQUITY</span>
+              <span style={{ fontSize: '24px', fontWeight: 'bold' }}></span>
+              <span style={{ fontSize: '16px' }}></span>
             </div>
           </div>
           
@@ -312,7 +312,7 @@ const Footer = () => {
           fontSize: isMobile ? '12px' : '14px',
           order: isMobile ? 0 : 1
         }}>
-          &copy; {new Date().getFullYear()} Onyx Equity. Developed by RBM
+          &copy; {new Date().getFullYear()} Gelt Capital USA. Developed by RBM
         </div>
       </div>
     </footer>

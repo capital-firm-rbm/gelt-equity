@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import palette from '../styles/colors';
 import { FaChevronDown, FaSearch, FaShieldAlt, FaCheck, FaBars, FaTimes } from 'react-icons/fa';
-import ONYXLogo from '../assets/ONYX.png'; // Import the ONYX logo image
+import GeltCapitalUSALogo from '../assets/Gelt Capital USA.png'; // Import the Gelt Capital USA logo image
 import useResponsive from '../hooks/useResponsive'; // Import the responsive hook
 
 const NavBar = () => {
@@ -55,41 +55,6 @@ const NavBar = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
-      {/* Top bar with sky blue background */}
-      <div style={{ 
-        backgroundColor: palette.skyBlue,
-        width: '100%', 
-        padding: isMobile ? '4px 0' : '8px 0',
-        display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
-        justifyContent: 'space-between',
-        alignItems: isMobile ? 'center' : 'center',
-        color: 'black',
-        fontWeight: 'medium',
-        fontSize: isMobile ? '10px' : '14px'
-      }}>
-        <div style={{ 
-          marginLeft: isMobile ? '0' : '56px',
-          textAlign: isMobile ? 'center' : 'left',
-          padding: isMobile ? '2px 0' : '0'
-        }}>
-          <span style={{ fontWeight: 'bold' }}>Welcome to ONYX Capital.</span> Business funding is what we do.
-        </div>
-        <div style={{ 
-          display: 'flex', 
-          flexDirection: isMobile ? 'column' : 'row',
-          gap: isMobile ? '2px' : '20px', 
-          marginRight: isMobile ? '0' : '56px',
-          alignItems: 'center',
-          textAlign: 'center',
-          fontSize: isMobile ? '10px' : '14px',
-          padding: isMobile ? '2px 0' : '0'
-        }}>
-          <div>305-424-7992</div>
-          <div>19790 W Dixie Hwy, Miami FL, 33180</div>
-        </div>
-      </div>
-
       {/* Main navigation bar with black background */}
       <div style={{ 
         backgroundColor: palette.darkBlue,
@@ -113,8 +78,8 @@ const NavBar = () => {
             style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
           >
             <img 
-              src={ONYXLogo} 
-              alt="ONYX Logo" 
+              src={GeltCapitalUSALogo} 
+              alt="Gelt Capital USA Logo" 
               style={{ 
                 width: isMobile ? '36px' : '80px', 
                 // height: isMobile ? '36px' : '48px',
@@ -131,7 +96,7 @@ const NavBar = () => {
               alignItems: 'flex-start',
               lineHeight: '1'
             }}>
-              {/* <span>ONYX</span>
+              {/* <span>Gelt Capital USA</span>
               <span style={{ fontSize: isMobile ? '12px' : '14px' }}>CAPITAL</span> */}
             </div>
           </motion.div>

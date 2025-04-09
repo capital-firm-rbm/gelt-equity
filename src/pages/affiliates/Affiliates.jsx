@@ -152,7 +152,7 @@ const Affiliates = () => {
               </div>
               <div style={{ textAlign: 'left' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Call Us</h3>
-                <p style={{ color: '#cccccc' }}>305-424-7992</p>
+                <p style={{ color: '#cccccc' }}>247-378-5821</p>
               </div>
             </motion.div>
             
@@ -179,7 +179,7 @@ const Affiliates = () => {
               </div>
               <div style={{ textAlign: 'left' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Email Us</h3>
-                <p style={{ color: '#cccccc' }}>Admin@onyxequity.co</p>
+                <p style={{ color: '#cccccc' }}>Admin@Gelt Capital USAequity.co</p>
               </div>
             </motion.div>
             
@@ -206,7 +206,7 @@ const Affiliates = () => {
               </div>
               <div style={{ textAlign: 'left' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Address</h3>
-                <p style={{ color: '#cccccc' }}>19790 W Dixie Hwy, Miami FL, 33180</p>
+                <p style={{ color: '#cccccc' }}>7901 4th st N ste 300, St. Petersburg FL</p>
               </div>
             </motion.div>
           </motion.div>

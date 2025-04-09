@@ -74,7 +74,7 @@ const Disclosures = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              Onyx Equity provides business financing solutions through various products and services. The information provided on our website is for general informational purposes only and should not be considered as financial advice. We recommend consulting with qualified financial and legal professionals before making any financial decisions for your business.
+              Gelt Capital USA provides business financing solutions through various products and services. The information provided on our website is for general informational purposes only and should not be considered as financial advice. We recommend consulting with qualified financial and legal professionals before making any financial decisions for your business.
             </p>
           </section>
           
@@ -118,7 +118,7 @@ const Disclosures = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              Onyx Equity may partner with third-party lenders and financial institutions to provide certain financing options. These relationships may involve compensation to Onyx Equity for referrals. We strive to work only with reputable partners who offer competitive rates and terms, but we encourage all clients to review all terms and conditions carefully before accepting any financing offers.
+              Gelt Capital USA may partner with third-party lenders and financial institutions to provide certain financing options. These relationships may involve compensation to Gelt Capital USA for referrals. We strive to work only with reputable partners who offer competitive rates and terms, but we encourage all clients to review all terms and conditions carefully before accepting any financing offers.
             </p>
           </section>
           
@@ -136,7 +136,7 @@ const Disclosures = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              Onyx Equity complies with all applicable federal and state laws and regulations regarding business lending and financing. We are committed to responsible lending practices and transparent disclosures. Our lending operations may be subject to oversight by various regulatory bodies depending on the specific products and jurisdictions involved.
+              Gelt Capital USA complies with all applicable federal and state laws and regulations regarding business lending and financing. We are committed to responsible lending practices and transparent disclosures. Our lending operations may be subject to oversight by various regulatory bodies depending on the specific products and jurisdictions involved.
             </p>
           </section>
           
@@ -159,7 +159,7 @@ const Disclosures = () => {
               color: '#cccccc',
               fontStyle: 'italic'
             }}>
-              Equal Credit Opportunity: Onyx Equity is an equal opportunity lender and does not discriminate on the basis of race, color, religion, national origin, sex, marital status, age, or because all or part of the applicant's income derives from any public assistance program, or because the applicant has in good faith exercised any right under the Consumer Credit Protection Act.
+              Equal Credit Opportunity: Gelt Capital USA is an equal opportunity lender and does not discriminate on the basis of race, color, religion, national origin, sex, marital status, age, or because all or part of the applicant's income derives from any public assistance program, or because the applicant has in good faith exercised any right under the Consumer Credit Protection Act.
             </p>
           </motion.div>
         </motion.div>

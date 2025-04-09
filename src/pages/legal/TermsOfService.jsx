@@ -74,7 +74,7 @@ const TermsOfService = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              By accessing or using the Onyx Equity website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
+              By accessing or using the Gelt Capital USA website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
             </p>
           </section>
           
@@ -93,7 +93,7 @@ const TermsOfService = () => {
               color: '#cccccc',
               marginBottom: '15px'
             }}>
-              Permission is granted to temporarily download one copy of the materials on Onyx Equity's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+              Permission is granted to temporarily download one copy of the materials on Gelt Capital USA's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
             </p>
             <ul style={{
               listStyleType: 'disc',
@@ -147,7 +147,7 @@ const TermsOfService = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              The materials on Onyx Equity's website are provided on an 'as is' basis. Onyx Equity makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+              The materials on Gelt Capital USA's website are provided on an 'as is' basis. Gelt Capital USA makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
             </p>
           </section>
           
@@ -165,7 +165,7 @@ const TermsOfService = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              In no event shall Onyx Equity or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Onyx Equity's website, even if Onyx Equity or an authorized representative has been notified orally or in writing of the possibility of such damage.
+              In no event shall Gelt Capital USA or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Gelt Capital USA's website, even if Gelt Capital USA or an authorized representative has been notified orally or in writing of the possibility of such damage.
             </p>
           </section>
           
@@ -200,7 +200,7 @@ const TermsOfService = () => {
                 color: '#cccccc',
                 marginBottom: '5px'
               }}>
-                Onyx Equity - Legal Department
+                Gelt Capital USA - Legal Department
               </p>
               <p style={{
                 fontSize: '16px',
@@ -215,7 +215,7 @@ const TermsOfService = () => {
                 lineHeight: 1.7,
                 color: '#cccccc'
               }}>
-                <a href="mailto:legal@onyxequity.com" style={{ color: palette.skyBlue }}>legal@onyxequity.com</a>
+                <a href="mailto:legal@Gelt Capital USAequity.com" style={{ color: palette.skyBlue }}>legal@Gelt Capital USAequity.com</a>
               </p>
             </div>
           </motion.div>

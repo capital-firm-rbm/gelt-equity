@@ -171,7 +171,7 @@ const InformationalSection = () => {
               color: 'white'
             }}
           >
-            ONYX EQUITY believes in ALL small businesses.
+            Gelt Capital USA believes in ALL small businesses.
           </motion.h3>
           
           <motion.p
@@ -381,7 +381,7 @@ const InformationalSection = () => {
               color: '#ffffff'
             }}
           >
-            It has never been easier to get funded for your small business, and you won't ever need to look anywhere else again. Right here at Onyx Equity, we have you and your business needs in mind and will do whatever it takes to help you elevate your business to the next level. Small business loans have never been so easy.
+            It has never been easier to get funded for your small business, and you won't ever need to look anywhere else again. Right here at Gelt Capital USA, we have you and your business needs in mind and will do whatever it takes to help you elevate your business to the next level. Small business loans have never been so easy.
           </motion.p>
           
           <motion.div
@@ -428,7 +428,7 @@ const InformationalSection = () => {
         >
           <img 
             src={phonesImage} 
-            alt="Onyx Equity Mobile App Screens" 
+            alt="Gelt Capital USA Mobile App Screens" 
             style={{ 
               maxWidth: '100%',
               height: 'auto',

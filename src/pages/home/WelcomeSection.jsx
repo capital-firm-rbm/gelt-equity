@@ -93,11 +93,11 @@ const WelcomeSection = () => {
         margin: '0 auto',
         padding: '0 20px',
         display: 'flex',
-        flexDirection: isMobile || isTablet ? 'column' : 'row',
+        flexDirection: isMobile || isTablet ? 'column' : 'row-reverse',
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        {/* Left content - on top for mobile */}
+        {/* Left content (now on right) */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -133,10 +133,11 @@ const WelcomeSection = () => {
             exit={{ opacity: 0, y: -30 }}
             transition={{ duration: 0.8 }}
             style={{ 
-              fontSize: isMobile ? '36px' : (isTablet ? '48px' : '64px'),
+              fontSize: isMobile ? '32px' : (isTablet ? '42px' : '54px'),
               fontWeight: 'bold',
               marginBottom: '20px',
-              position: 'relative'
+              position: 'relative',
+              lineHeight: '1.1'
             }}
           >
             Business funding is <br />
@@ -271,13 +272,13 @@ const WelcomeSection = () => {
 
               {/* Join text */}
               <p style={{ fontSize: '16px', lineHeight: '1.4' }}>
-                Join other enterpreneurs who used ONYX EQUITY funding for their business!
+                Join other enterpreneurs who used Gelt Capital USA funding for their business!
               </p>
             </motion.div>
           )}
         </motion.div>
 
-        {/* Right content */}
+        {/* Right content (now on left) */}
         {isMobile || isTablet ? (
           // Mobile version - simplified
           <motion.div 
@@ -291,7 +292,7 @@ const WelcomeSection = () => {
           >
             <motion.img 
               src={topImage} 
-              alt="ONYX EQUITY Mobile App"
+              alt="Gelt Capital USA Mobile App"
               style={{ 
                 maxWidth: '70%',
                 height: 'auto',
@@ -310,14 +311,14 @@ const WelcomeSection = () => {
             style={{ 
               flex: '1',
               display: 'flex',
-              justifyContent: 'flex-end',
+              justifyContent: 'flex-start',
               alignItems: 'center',
               position: 'relative'
             }}
           >
             <motion.img 
               src={topImage} 
-              alt="ONYX EQUITY Mobile App"
+              alt="Gelt Capital USA Mobile App"
               style={{ 
                 maxWidth: '100%',
                 height: 'auto',
@@ -338,11 +339,11 @@ const WelcomeSection = () => {
                 borderRadius: '8px',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
                 zIndex: 5,
-                y: revenuePillY
-                // Rotation removed
+                y: revenuePillY,
+                opacity: 0
               }}
               initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 0, scale: 1 }}
               viewport={{ once: false }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5 }}
@@ -369,7 +370,8 @@ const WelcomeSection = () => {
                 fontWeight: 'bold',
                 y: dollarY,
                 scale: dollarScale,
-                rotate: dollarRotate
+                rotate: dollarRotate,
+                opacity: 0
               }}
             >
               $
@@ -382,7 +384,8 @@ const WelcomeSection = () => {
                 bottom: '15%',
                 right: '25%',
                 y: gearY,
-                rotate: gearRotate
+                rotate: gearRotate,
+                opacity: 0
               }}
             >
               <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="1">

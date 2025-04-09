@@ -468,7 +468,7 @@ const Apply = () => {
             marginBottom: '30px'
           }}
         >
-          Thank you for applying for funding with ONYX Capital. We've received your application and a funding specialist will contact you within 24 hours to discuss next steps.
+          Thank you for applying for funding with Gelt Capital USA Capital. We've received your application and a funding specialist will contact you within 24 hours to discuss next steps.
         </motion.p>
         
         <motion.div

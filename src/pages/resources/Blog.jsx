@@ -114,7 +114,7 @@ const Blog = () => {
             color: palette.skyBlue,
             textAlign: 'center'
           }}>
-            Onyx Equity Blog
+            Gelt Capital USA Blog
           </h1>
           
           <p style={{

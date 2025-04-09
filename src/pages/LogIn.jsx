@@ -172,7 +172,7 @@ const LogIn = () => {
               maxWidth: '300px'
             }}
           >
-            Log in to access your Onyx Equity account
+            Log in to access your Gelt Capital USA account
           </motion.p>
         </div>
         

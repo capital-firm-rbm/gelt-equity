@@ -12,12 +12,12 @@ const ReferenceCardSection = () => {
   // Card data
   const cards = [
     {
-      title: "More about Onyx Equity",
+      title: "More about Gelt Capital USA",
       description: "You should know everything about the company you work with and trust to give your capital.",
       learnMoreLink: "/about/our-story"
     },
     {
-      title: "Explore Onyx Equity Program",
+      title: "Explore Gelt Capital USA Program",
       description: "We offer you a suit of options along with our marketplace to help you get the best option for your business.",
       learnMoreLink: "/about/our-story"
     }

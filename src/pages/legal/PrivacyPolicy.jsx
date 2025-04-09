@@ -74,7 +74,7 @@ const PrivacyPolicy = () => {
               lineHeight: 1.7,
               color: '#cccccc'
             }}>
-              At Onyx Equity, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services. Please read this policy carefully to understand our practices regarding your personal data.
+              At Gelt Capital USA, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website or use our services. Please read this policy carefully to understand our practices regarding your personal data.
             </p>
           </section>
           
@@ -212,7 +212,7 @@ const PrivacyPolicy = () => {
                 color: '#cccccc',
                 marginBottom: '5px'
               }}>
-                Onyx Equity
+                Gelt Capital USA
               </p>
               <p style={{
                 fontSize: '16px',
@@ -227,7 +227,7 @@ const PrivacyPolicy = () => {
                 lineHeight: 1.7,
                 color: '#cccccc'
               }}>
-                <a href="mailto:privacy@onyxequity.com" style={{ color: palette.skyBlue }}>privacy@onyxequity.com</a>
+                <a href="mailto:privacy@Gelt Capital USAequity.com" style={{ color: palette.skyBlue }}>privacy@Gelt Capital USAequity.com</a>
               </p>
             </div>
           </motion.div>

@@ -31,25 +31,25 @@ const Press = () => {
     {
       id: 1,
       date: 'March 15, 2023',
-      title: 'Onyx Equity Announces $50M Funding Round to Expand Small Business Lending',
+      title: 'Gelt Capital USA Announces $50M Funding Round to Expand Small Business Lending',
       summary: 'New capital will help extend reach to underserved markets and develop advanced financial technology solutions.',
     },
     {
       id: 2,
       date: 'December 7, 2022',
-      title: 'Onyx Equity Partners with FinTech Innovator to Enhance Loan Application Process',
+      title: 'Gelt Capital USA Partners with FinTech Innovator to Enhance Loan Application Process',
       summary: 'Strategic partnership aims to reduce approval times by 40% while maintaining rigorous underwriting standards.',
     },
     {
       id: 3,
       date: 'October 2, 2022',
-      title: 'Onyx Equity Named Among Top 10 Alternative Lenders by Finance Monthly',
+      title: 'Gelt Capital USA Named Among Top 10 Alternative Lenders by Finance Monthly',
       summary: 'Recognition highlights company\'s commitment to flexible financing solutions and client satisfaction.',
     },
     {
       id: 4,
       date: 'July 18, 2022',
-      title: 'Onyx Equity Launches New Small Business Recovery Program',
+      title: 'Gelt Capital USA Launches New Small Business Recovery Program',
       summary: 'Initiative provides specialized funding options for businesses rebuilding after pandemic disruptions.',
     },
   ];
@@ -117,8 +117,8 @@ const Press = () => {
             textAlign: 'center',
             color: '#cccccc'
           }}>
-            Stay up to date with the latest news and announcements from Onyx Equity.
-            For media inquiries, please contact our press team at <a href="mailto:press@onyxequity.com" style={{ color: palette.skyBlue }}>press@onyxequity.com</a>
+            Stay up to date with the latest news and announcements from Gelt Capital USA.
+            For media inquiries, please contact our press team at <a href="mailto:press@Gelt Capital USAequity.com" style={{ color: palette.skyBlue }}>press@Gelt Capital USAequity.com</a>
           </p>
         </motion.div>
         
