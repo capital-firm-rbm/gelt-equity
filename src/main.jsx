@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import './assets/favicon.png'
+import './assets/load-link.png'
 
 // Determine the base URL
 const basename = '/'
