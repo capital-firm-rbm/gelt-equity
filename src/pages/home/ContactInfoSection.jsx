@@ -14,7 +14,7 @@ const ContactInfoSection = () => {
   const contactCards = [
     {
       title: "Phone",
-      info: "247-378-5821",
+      info: "(347) 378-5821",
       icon: FaPhone,
       color: palette.skyBlue
     },
@@ -26,7 +26,7 @@ const ContactInfoSection = () => {
     },
     {
       title: "Email",
-      info: "Admin@Gelt Capital USAequity.co",
+      info: "office@geltcapitalusa.com",
       icon: FaEnvelope,
       color: palette.skyBlue
     }

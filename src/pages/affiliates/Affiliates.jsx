@@ -178,7 +178,7 @@ const Affiliates = () => {
               </div>
               <div style={{ textAlign: 'left' }}>
                 <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '4px' }}>Email Us</h3>
-                <p style={{ color: '#cccccc' }}>Admin@Gelt Capital USAequity.co</p>
+                <p style={{ color: '#cccccc' }}> office@geltcapitalusa.com</p>
               </div>
             </motion.div>
             
