@@ -39,21 +39,6 @@ const BusinessLoans = () => {
     }
   };
   
-  const logoVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-  
-  // Certification and rating logos
-  const certifications = [
-    { name: 'Trustpilot', rating: '4.8 (2163)', stars: 5 },
-    { name: 'Google', rating: '5/5 (40)', stars: 5 }
-  ];
-
   return (
     <div style={{
       width: '100%',
@@ -162,85 +147,6 @@ const BusinessLoans = () => {
             </Link>
           </motion.div>
         </div>
-      </section>
-      
-      {/* Certifications & Ratings Section */}
-      <section style={{
-        backgroundColor: 'white',
-        padding: '30px 0',
-        width: '100%'
-      }}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            gap: '20px',
-            padding: '0 20px'
-          }}
-        >
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              variants={logoVariant}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                color: '#333'
-              }}
-            >
-              <div style={{
-                width: isMobile ? '80px' : '100px',
-                height: isMobile ? '40px' : '50px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}>
-                {/* This would normally be an image, but we're using placeholders */}
-                <div style={{
-                  backgroundColor: '#f0f0f0',
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: '5px',
-                  fontWeight: 'bold',
-                  fontSize: '14px',
-                  color: '#555'
-                }}>
-                  {cert.name}
-                </div>
-              </div>
-              
-              {cert.rating && (
-                <div style={{ 
-                  marginTop: '5px',
-                  fontSize: '14px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center'
-                }}>
-                  <div style={{
-                    color: palette.skyBlue,
-                    marginBottom: '2px'
-                  }}>
-                    {'★'.repeat(cert.stars)}
-                  </div>
-                  <span>{cert.rating}</span>
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
       </section>
       
       {/* Main Heading Section */}
